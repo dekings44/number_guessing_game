@@ -32,13 +32,14 @@ def game():
     print(f'The correct answer is {answer}')
 
     turns = set_difficulty()
-    print(f'You have {turns} attempts remaining to guess the correct number.')
+    
 
     guess = 0
 
     while guess != answer:
+        print(f'You have {turns} attempts remaining to guess the correct number.')
         guess = int(input('Make a guess:\n'))
 
-        check_answer(guess, answer, turns)
+        turns = check_answer(guess, answer, turns)
 
 game()
