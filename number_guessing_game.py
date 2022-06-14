@@ -4,11 +4,14 @@ from random import randint
 EASY_LEVEL_TURNS = 10
 HARD_LEVEL_TURNS = 5
 
-def check_answer(guess, answer):
+def check_answer(guess, answer, turns):
+    '''Checks answer against guess. Returns the number of turns remaining'''
     if guess > answer:
         print(f'Your guessed number {guess} is too high')
+        return turns - 1
     elif guess < answer:
         print(f'Your guessed number {guess} is too low')
+        return turns - 1
     else:
         print(f"You got it! The answer was {answer}")
 
@@ -36,6 +39,6 @@ def game():
     while guess != answer:
         guess = int(input('Make a guess:\n'))
 
-        check_answer(guess, answer)
+        check_answer(guess, answer, turns)
 
 game()
