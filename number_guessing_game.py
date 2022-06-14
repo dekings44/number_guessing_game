@@ -1,4 +1,5 @@
 from random import randint
+from art import logo
 
 
 EASY_LEVEL_TURNS = 10
@@ -23,7 +24,7 @@ def set_difficulty():
     else:
         return HARD_LEVEL_TURNS
 def game():
-    print('Welcome to the Guessing Game')
+    print(f'WELCOME TO THE \n\n {logo}')
 
     print("I am thinking of a number between 1 and 100.")
 
