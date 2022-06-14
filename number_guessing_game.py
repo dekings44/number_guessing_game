@@ -7,10 +7,10 @@ HARD_LEVEL_TURNS = 5
 def check_answer(guess, answer, turns):
     '''Checks answer against guess. Returns the number of turns remaining'''
     if guess > answer:
-        print(f'Your guessed number {guess} is too high')
+        print(f'Your guessed number {guess} is too high\n\nGuess again')
         return turns - 1
     elif guess < answer:
-        print(f'Your guessed number {guess} is too low')
+        print(f'Your guessed number {guess} is too low\n\nGuess again')
         return turns - 1
     else:
         print(f"You got it! The answer was {answer}")
@@ -41,5 +41,8 @@ def game():
         guess = int(input('Make a guess:\n'))
 
         turns = check_answer(guess, answer, turns)
+        if turns == 1:
+            print(f'Your have used up your lives. You have {turns} life. \n You lose')
+            return
 
 game()
