@@ -21,8 +21,10 @@ def set_difficulty():
     level = input('Choose a difficulty level. "easy" or "hard":\n')
     if level == 'easy':
         return EASY_LEVEL_TURNS
-    else:
+    elif level == 'hard':
         return HARD_LEVEL_TURNS
+    else:
+        return set_difficulty()
 def game():
     print(f'WELCOME TO THE \n\n {logo}')
 
@@ -30,7 +32,6 @@ def game():
 
 
     answer = randint(1, 100)
-    print(f'The correct answer is {answer}')
 
     turns = set_difficulty()
     
